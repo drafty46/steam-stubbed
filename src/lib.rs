@@ -6,7 +6,7 @@ use std::sync::{OnceLock, atomic::AtomicU32};
 use minhook::MinHook;
 use winapi::{shared::minwindef::{BOOL, DWORD, HMODULE, LPVOID, TRUE}, um::{libloaderapi::DisableThreadLibraryCalls, memoryapi::VirtualProtect, winnt::{DLL_PROCESS_ATTACH, PAGE_EXECUTE_READWRITE}}};
 
-const MAX_COUNT: u32 = 1;
+const MAX_COUNT: u32 = 2;
 
 static COUNT: AtomicU32 = AtomicU32::new(0);
 static HOOK_ORIG: OnceLock<unsafe extern "system" fn() -> DWORD> = OnceLock::new();
